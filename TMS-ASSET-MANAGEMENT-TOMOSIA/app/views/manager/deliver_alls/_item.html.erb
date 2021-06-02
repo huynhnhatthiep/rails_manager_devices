@@ -1,0 +1,51 @@
+<tr id="request-<%= item.id%>">
+ <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item.request.user.name%></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item.type_deliver%></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item.item.name%></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= item.start_date %>
+  </td>
+  <td class="budget">
+    <%= item.end_date %>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= item.reason %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <i class="bg-warning"></i>
+      <span class="status"><%= item.status %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= item.note %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= item.date_deliver %></span>
+    </span>
+  </td>
+
+</tr>

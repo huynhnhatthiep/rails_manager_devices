@@ -1,0 +1,53 @@
+<tr id="request-<%= deliver.id%>">
+ <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= deliver.request.user.name%></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= deliver.type_deliver%></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= deliver.item.name%></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= deliver.start_date %>
+  </td>
+  <td class="budget">
+    <%= deliver.end_date %>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= deliver.reason %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <i class="bg-warning"></i>
+      <span class="status"><%= deliver.status %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= deliver.note %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= deliver.date_deliver %></span>
+    </span>
+  </td>
+  <td style="text-align: center !important">
+    <%= link_to 'Edit', edit_manager_deliver_path(deliver),  :class => "btn btn-primary "%>
+  </td>
+</tr>

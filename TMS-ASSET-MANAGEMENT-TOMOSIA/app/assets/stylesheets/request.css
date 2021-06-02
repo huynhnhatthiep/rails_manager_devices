@@ -1,0 +1,113 @@
+.btn-submit{
+  margin-top: 10px;
+}
+.filed_select{
+  color: black;
+  height: 43px !important;
+  width: 100% !important;
+  border: 1px solid #dee2e6;
+  background-color:white;
+}
+.filed_select:focus{
+  border: 1px solid #5e72e4;
+}
+
+.heade_create{
+  padding-top: 50px;
+  text-align: center;
+}
+.heade_create p {
+  font-size: 33px;
+  font-weight: bold;
+}
+.btn_submit{
+  text-align: center;
+}
+.text_area{
+  color: black;
+  height: auto !important;
+  width: 100% !important;
+  border: 1px solid #dee2e6;
+  background-color:white;
+}
+.lable{
+  font-weight: bold;
+}
+.item_errors{
+  margin: 0px !important;
+}
+.errors{
+  color: red;
+  list-style: none;
+}
+.card_item{
+  padding-top:0px !important ;
+}
+.success{
+  color: green;
+}
+.success_item{
+  text-align: end;
+  padding: 10px;
+}
+.error_item{
+  text-align: start;
+}
+.error{
+  margin-left: 50px;
+  color: red;
+}
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #5e72e4;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid #2e6ab1; }
+  .digg_pagination a {
+    text-decoration: none;}
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #5e72e4;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #5e72e4;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; 
+}
+
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+}
+.input_search{
+  border-radius: 30px !important;
+}

@@ -1,0 +1,32 @@
+en:
+  hello: "Hello world"
+  admin:
+    index:
+      title: 'Home'
+      profile: 'Profile'
+      login: 'Login'
+      register: 'Register'
+      tables: 'List User'
+      stt: 'stt'
+      name: 'name'
+      email: 'email'
+      status: 'status'
+      status: 'reason'
+      number: '2020'
+      creative_tim: 'Creative Tim'
+      about_us: 'About Us'
+      blog: 'blog'
+      mit_license: 'MIT License'
+    about:
+      title: 'About us'
+  manager:
+    devices:
+    index:
+      link_export: Export Users
+      title: Export CSV
+  header_csv:
+    name: Name
+    status: status
+    price: price
+    comment: Comment
+    detail: Detail
