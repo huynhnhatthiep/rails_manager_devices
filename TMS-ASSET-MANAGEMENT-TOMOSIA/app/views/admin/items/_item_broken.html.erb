@@ -1,0 +1,22 @@
+<tr id="employee-<%= item_broken.id%>">
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item_broken.name %></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item_broken.comment %></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= item_broken.price %> $
+  </td>
+  <td class="budget">
+    <%= link_to 'Show', admin_item_path(item_broken),  :class => "btn btn-primary btn-submit"%>
+  </td>
+</tr>

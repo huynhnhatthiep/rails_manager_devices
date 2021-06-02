@@ -1,0 +1,33 @@
+<tr id="request-<%= request.id%>">
+ <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= request.user.name %></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= request.item.name %></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= request.item.price %> $
+  </td>
+  <td class="budget">
+    <%= request.reason %>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <i class="bg-warning"></i>
+      <span class="status"><%= request.status %></span>
+    </span>
+  </td>
+  <td>
+    <div class="d-flex align-items-center">
+      <span class="completion mr-2"><%= request.type_request %></span>
+    </div>
+  </td>
+</tr>

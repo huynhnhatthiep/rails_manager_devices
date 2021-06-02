@@ -1,0 +1,17 @@
+.drak-table {
+  padding-top: 60px !important;
+  margin-bottom: 60px;
+}
+
+.boder_search{
+  border: 1px solid royalblue;
+  border-radius: 30px;
+  background-color:white;
+}
+.input_search{
+  border-radius: 30px;
+}
+
+.text-right-dark{
+  margin-bottom: 20px;
+}

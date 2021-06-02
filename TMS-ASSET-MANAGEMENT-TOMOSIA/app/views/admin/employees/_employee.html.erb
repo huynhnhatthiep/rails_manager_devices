@@ -1,0 +1,25 @@
+<tr id="employee-<%= employee.id%>">
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= employee.name %></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= employee.email %></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= employee.phone_number %>
+  </td>
+  <td class="budget">
+    <%= employee.address %>
+  </td>
+  <td class="budget">
+    <%= link_to 'Detail', admin_employee_path(employee.id),  :class => "btn btn-primary btn-submit"%>
+  </td>
+</tr>

@@ -1,0 +1,195 @@
+
+<div class="main-content" id="panel">
+  <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center  ml-md-auto ">
+          <li class="nav-item d-xl-none">
+            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item d-sm-none">
+            <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+              <i class="ni ni-zoom-split-in"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="ni ni-bell-55"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+              <div class="px-3 py-3">
+                <h6 class="text-sm text-muted m-0">You have <strong class="text-primary">13</strong> notifications.</h6>
+              </div>
+              <a href="#!" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="ni ni-ungroup"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default  dropdown-menu-right ">
+              <div class="row shortcuts px-4">
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-red">
+                    <i class="ni ni-calendar-grid-58"></i>
+                  </span>
+                  <small>Calendar</small>
+                </a>
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-orange">
+                    <i class="ni ni-email-83"></i>
+                  </span>
+                  <small>Email</small>
+                </a>
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-info">
+                    <i class="ni ni-credit-card"></i>
+                  </span>
+                  <small>Payments</small>
+                </a>
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-green">
+                    <i class="ni ni-books"></i>
+                  </span>
+                  <small>Reports</small>
+                </a>
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-purple">
+                    <i class="ni ni-pin-3"></i>
+                  </span>
+                  <small>Maps</small>
+                </a>
+                <a href="#!" class="col-4 shortcut-item">
+                  <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
+                    <i class="ni ni-basket"></i>
+                  </span>
+                  <small>Shop</small>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <div class="media-body  ml-2  d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold"><%= current_user.name %></span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu  dropdown-menu-right ">
+              <div class="dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+              <a href="#!" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>My profile</span>
+              </a>
+              <a href="#!" class="dropdown-item">
+                <i class="ni ni-settings-gear-65"></i>
+                <span>Settings</span>
+              </a>
+              <a href="#!" class="dropdown-item">
+                <i class="ni ni-calendar-grid-58"></i>
+                <span>Activity</span>
+              </a>
+              <a href="#!" class="dropdown-item">
+                <i class="ni ni-support-16"></i>
+                <span>Support</span>
+              </a>
+              <div class="dropdown-divider"></div>
+                <% if user_signed_in? %>
+                  <span><%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "dropdown-item" %></span>
+                <% else %>
+                  <span><%= link_to "Sign up now!",  new_user_registration_path, :class => "dropdown-item" %></span>
+                <% end %>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="heade_create">
+            <p>Create Request</p>
+          </div>
+           <div class = 'error_item'>
+              <%flash.each do |name, msg|%>
+                <span class = 'error'> <%= msg %></span>
+              <% end %>
+            </div>
+          <% if @request.errors.any? %>
+            <ul class = 'item_errors'>
+              <% @request.errors.full_messages.each do |message| %>
+                <li class = 'errors'><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <div class="card-body px-lg-5 py-lg-5 card_item">
+            <%= form_with(model: @request, url: employee_requests_path, remote: true, local: true) do |f| %>
+
+              <div class="form-group">
+                <%= f.label :type_request, :class => "lable"%><br />
+                <%= f.select :type_request, ['Borrow', 'Restore', 'Break'], {}, { :class => 'filed_select' }%>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :device, :class => "lable" %>
+                <%= f.select :item_id, dataItemNotUsed.collect { |p| [ p.name, p.id ] }, {}, { :class => 'filed_select' } %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :start_date_request, :class => "lable"%><br />
+                <%= f.date_field :start_date, :class => "filed_select" %>
+              </div>
+                <div class="form-group">
+                <%= f.label :end_date_request,:class => "lable"%><br />
+                <%= f.date_field :end_date, :class =>  "filed_select" %>
+              </div>
+                <div class="form-group">
+                  <%= f.label :reason, :class => "lable"%>
+                  <%= f.text_area :reason, :class => "text_area" %>
+              </div>
+                <div class="form-group btn_submit">
+                  <%= link_to "Back", employee_requests_path, class: "btn btn-info btn-primary" %>
+                  <%= f.submit "Submit", class: "btn btn-primary" %>
+                </div>
+            <%end%>
+          </div>
+          <div class="card-footer py-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<script src="../assets/js/argon.js?v=1.2.0"></script>

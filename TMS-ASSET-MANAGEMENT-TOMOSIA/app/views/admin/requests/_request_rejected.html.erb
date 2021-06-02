@@ -1,0 +1,38 @@
+<tr id="request_rejected-<%= request_rejected.id%>">
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= request_rejected.user.name %></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= request_rejected.item.name %></span>
+      </div>
+    </div>
+  </th>
+  <td class="budget">
+    <%= request_rejected.item.price %> $
+  </td>
+  <td class="budget">
+    <%= request_rejected.reason %>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <i class="bg-warning"></i>
+      <span class="status"><%= request_rejected.status %></span>
+    </span>
+  </td>
+  <td>
+    <div class="d-flex align-items-center">
+      <span class="completion mr-2"><%= request_rejected.type_request %></span>
+    </div>
+  </td>
+  <td>
+    <div class="d-flex align-items-center">
+      <span class="completion mr-2"><%= request_rejected.note %></span>
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,8 @@
+.boder_search{
+  border: 1px solid royalblue;
+  border-radius: 30px;
+  background-color:white;
+}
+.input_search{
+  border-radius: 30px !important;
+}

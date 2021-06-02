@@ -1,0 +1,35 @@
+<tr id="request-<%= item.id%>">
+ <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item.name%></span>
+      </div>
+    </div>
+  </th>
+  <th scope="row">    
+    <div class="media align-items-center">
+      <div class="media-body">
+        <span class="name mb-0 text-sm"><%= item.comment%></span>
+      </div>
+    </div>
+  </th>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= item.price %></span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><label>Cpu:</label> <%= item.detail["Cpu"] %></span>
+      <span class="status"><label>RAM:</label> <%= item.detail["RAM"] %>...</span>
+    </span>
+  </td>
+  <td>
+    <span class="badge badge-dot mr-4">
+      <span class="status"><%= item.status %></span>
+    </span>
+  </td>
+  <td>
+    <%= link_to 'Show', manager_device_path(item),  :class => "btn btn-primary btn-submit"%>
+  </td>
+</tr>

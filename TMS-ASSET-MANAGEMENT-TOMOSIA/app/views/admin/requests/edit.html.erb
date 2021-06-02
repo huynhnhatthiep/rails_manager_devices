@@ -1,0 +1,84 @@
+<div class="main-content" id="panel">
+  <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-search navbar-search-light form-inline mr-sm-3 __web-inspector-hide-shortcut__" id="navbar-search-main">
+        </div>
+        <ul class="navbar-nav align-items-center  ml-md-auto ">
+        </ul>
+        <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <div class="media-body  ml-2  d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold"><%= current_user.name %></span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu  dropdown-menu-right ">
+              <div class="dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+                <% if user_signed_in? %>
+                  <%= link_to "Change your password", edit_user_registration_path, :class => "dropdown-item" %>
+                <% end %>
+                <% if user_signed_in? %>
+                  <span><%= link_to "Edit Profile", edit_employee_profile_path(current_user.id), :class => "dropdown-item" %></span>
+                <% end %>
+              <div class="dropdown-divider"></div>
+                <% if user_signed_in? %>
+                  <span><%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "dropdown-item" %></span>
+                <% else %>
+                  <span><%= link_to "Sign up now!",  new_user_registration_path, :class => "dropdown-item" %></span>
+                <% end %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="header bg-primary pb-6">
+    <div class="container-fluid">
+      <div class="header-body">
+        <div class="row align-items-center py-4">
+          <div class="col-lg-6 col-7">
+          </div>
+          <div class="col-lg-6 col-5 text-right">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+    <div class="container mt--6">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <!-- Card header -->
+          <div class="heade_create">
+            <p>Note Reject</p>
+          </div>
+            <% if @request.errors.any? %>
+                <ul class = 'item_errors'>
+                  <% @request.errors.full_messages.each do |message| %>
+                    <li class = 'errors'><%= message %></li>
+                  <% end %>
+                </ul>
+              <% end %>
+          <div class="card-body px-lg-5 py-lg-5 card_item">
+            <%= form_for @request, url: {action: :update} do |f| %>        
+              <div class="form-group">
+                <%= f.label :note, :class => "lable"%>
+                <%= f.text_area :note, :class => "text_area" %>
+              </div>
+              <div class="form-group btn_submit">
+                <%= link_to "Back", admin_requests_path, :class => "btn btn-info btn-primary" %>
+                <%= f.submit "Reject",data: { confirm: 'Your confirm note' } ,class: "btn btn-primary" %>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

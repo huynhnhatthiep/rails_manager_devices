@@ -1,0 +1,1 @@
+$("#request_item_id").html("<%= escape_javascript options_for_select(@items.collect { |i| [i.name, i.id] }) %>");

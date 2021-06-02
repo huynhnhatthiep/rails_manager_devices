@@ -1,0 +1,82 @@
+<!-- Navbar -->
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="dashboard.html">
+      <img src="../assets/img/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a href="dashboard.html">
+              <img src="../assets/img/brand/blue.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr class="d-lg-none" />
+    </div>
+  </div>
+</nav>
+<!-- Main content -->
+<div class="main-content">
+  <!-- Header -->
+  <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+    <div class="container">
+      <div class="header-body text-center mb-7">
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+            <h1 class="text-white">Welcome TOMOSIA!</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container mt--8 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-body px-lg-5 py-lg-5">
+            <div class="container-fluid">
+              <p class = 'errors'><%= notice %></p>
+              <p class="errors"><%= alert %></p>
+            </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="form-group">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+              <div class="text-center">
+                <%= f.submit "Log in", class: "btn btn-primary my-4" %>
+              </div>
+            <% end %>
+            <div class="shared-link" style="display: flex;justify-content: space-between">
+              <%= render "devise/shared/links" %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
