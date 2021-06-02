@@ -1,0 +1,1 @@
+# rails_manager_devices
